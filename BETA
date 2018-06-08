@@ -1,0 +1,373 @@
+var mouseInBox = function(x, y, w, h) {
+    return mouseX > x && mouseX < x + w &&
+           mouseY > y && mouseY < y + h;
+};
+var scene='menu';
+var credity=435;
+var crediti=0;
+var scrollc1=0;
+var scrollc2=0;
+var bgrectc;
+//boat float
+var youfloatmyboat=random(1,2);
+var floatime=0;
+var boaty=0;
+//boat float
+var boatx=-220;
+var storyactivate=0;
+//story
+var storytime=0;
+var menu=function(){
+background(51, 255, 0);
+fill(189, 196, 57);
+noStroke();
+rect(50,50,300,300);
+fill(176, 207, 72);
+rect(47,30,307,20);
+rect(47,350,307,20);
+fill(168, 117, 15);
+//
+ellipse(26,40,20,40);
+ellipse(42,40,20,25);
+ellipse(11,40,20,25);
+//
+ellipse(26,360,20,40);
+ellipse(42,360,20,25);
+ellipse(11,360,20,25);
+//
+ellipse(371,40,20,40);
+ellipse(354,40,20,25);
+ellipse(387,40,20,25);
+//
+ellipse(371,360,20,40);
+ellipse(354,360,20,25);
+ellipse(386,360,20,25);
+//
+fill(255, 255, 255);
+textSize(25);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,70);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,90);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,110);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,130);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,150);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,170);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,190);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,210);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,230);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,250);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,270);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,290);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,310);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,330);
+text("𓅁𓁖𓀥𓀇𓀪𓂟𓂀𓁾𓆲𓋡𓉣𓁄𓁝𓂦𓈃𓌁𓀊𓀋",50,350);
+//
+fill(189, 196, 57);
+noStroke();
+rect(128,110,150,50);
+rect(128,193,150,50);
+rect(128,269,150,50);
+fill(255, 255, 255);
+text("Play",179,145);
+text("How 2",171,228);
+text("Credits",165,304);
+stroke(255, 0, 0);
+strokeWeight(10);
+point(mouseX,mouseY);
+if(mouseInBox(128,110,150,50)){mouseClicked=function(){scene='Play';};}
+if(mouseInBox(128,193,150,50)){mouseClicked=function(){scene='How2';};}
+if(mouseInBox(128,269,150,50)){mouseClicked=function(){scene='credits';};}
+};
+var how2=function(){
+background(255, 0, 0);
+textSize(30);
+fill(255, 255, 255);
+text("Go To This Link:",106,200);
+text("https://goo.gl/TFA8D6:",50,245);
+text("For more info",106,285);
+fill(255, 0, 255);
+rect(50,300,300,40);
+if(mouseInBox(50,300,300,40)){scene='menu';}
+};
+var credits=function(){background(0, 0, 0);
+textSize(50);
+text("THE END",85,credity);
+textSize(20);
+text("CHARACTER DESIGN:",5,credity+20);
+text("STORY LINE:",40,credity+50);
+text("DIRECTOR:Ethan.P",40,credity+80);
+text("EDITOR:Jeremy.D",40,credity+110);
+text("COMPANY:DARK STUDIO'S",40,credity+140);
+text(" AS VOICE OF",40,credity+170);
+text("ITEM DESIGN:",40,credity+200);
+text("MUSIC CREDIT:",40,credity+230);
+text("COMPANY:ALTRIX STUDIOS",40,credity+260);
+text("COMPANY:DRIPPING STUDIOS",40,credity+290);
+text("LOGO DESIGN:",40,credity+320);
+text("EXECUTIVE PRODUCER:Azhaan.K",40,credity+350);
+text("PRODUCER:Daniel.W",40,credity+380);
+text("MADE USING:JAVA SCRIPT",40,credity+410);
+text("WEBSITE:",40,credity+440);
+text("CODING TEACHER:PAMILLA",40,credity+470);
+text("------------------------------------------",40,credity+500);
+text(":::::DARK*ALTRIX*DRIPPING:::::",40,credity+525);
+text("------------------------------------------",40,credity+550);
+credity-=0.20;
+crediti+=1;
+if(crediti>3700){scene='menu';
+crediti=435;
+}
+};
+var play=function(){
+background(51, 255, 0);
+fill(189, 196, 57);
+noStroke();
+rect(50,50,300,300);
+fill(176, 207, 72);
+rect(47,30+scrollc1,307,20);
+rect(47,350+scrollc2,307,20);
+fill(168, 117, 15);
+//
+ellipse(26,40+scrollc1,20,40);
+ellipse(42,40+scrollc1,20,25);
+ellipse(11,40+scrollc1,20,25);
+//
+ellipse(26,360+scrollc2,20,40);
+ellipse(42,360+scrollc2,20,25);
+ellipse(11,360+scrollc2,20,25);
+//
+ellipse(371,40+scrollc1,20,40);
+ellipse(354,40+scrollc1,20,25);
+ellipse(387,40+scrollc1,20,25);
+//
+ellipse(371,360+scrollc2,20,40);
+ellipse(354,360+scrollc2,20,25);
+ellipse(386,360+scrollc2,20,25);
+scrollc1+=1;
+scrollc2-=1;
+fill(51, 255, 0);
+rect(47,10,307,20+scrollc1);
+rect(47,350,307,20+scrollc2);
+storyactivate+=1;
+if(scrollc1>147){scrollc1=148;scrollc2=-148;
+scene='story';
+}
+};
+var story =function(){
+    background(0, 221, 255);
+    fill(0, 153, 255);
+    rect(0,300,400,100);
+    fill(221, 255, 0);
+    ellipse(266,303,30,30);
+    ellipse(293,296,30,30);
+    fill(0, 255, 0);
+    ellipse(322,296,30,30);
+    ellipse(349,296,30,30);
+    ellipse(376,296,30,30);
+    ellipse(401,296,30,30);
+    fill(207, 157, 6);
+    rect(343,150,20,140);
+    pushMatrix();
+    rotate(38);
+    rect(370,-146,20,59);
+    popMatrix();
+    image(getImage("avatars/leaf-green"),349,94,50,50);
+    image(getImage("avatars/leaf-green"),325,113,50,50);
+    image(getImage("avatars/leaf-green"),316,94,50,50);
+    image(getImage("avatars/leaf-green"),349,135,50,50);
+    image(getImage("avatars/leaf-green"),293,128,50,50);
+    image(getImage("avatars/leaf-green"),327,142,50,50);
+    image(getImage("avatars/leaf-green"),274,147,50,50);
+    image(getImage("avatars/leaf-green"),270,163,50,50);
+    image(getImage("avatars/leaf-green"),314,163,50,50);
+    image(getImage("avatars/leaf-green"),363,152,50,50);
+    image(getImage("avatars/leaf-green"),376,163,50,50);
+    image(getImage("avatars/leaf-green"),367,103,50,50);
+    fill(196, 168, 42);
+    rect(0+boatx,230,152,90);
+    triangle(150+boatx,323,248+boatx,209,148+boatx,231);
+    stroke(115, 77, 0);
+    strokeWeight(5);
+    line(0+boatx,266,152+boatx,266);
+    line(0+boatx,283,152+boatx,283);
+    line(0+boatx,300,152+boatx,300);
+    line(0+boatx,249,152+boatx,249);
+    //
+    line(152+boatx,266,216+boatx,244);
+    line(152+boatx,283,200+boatx,265);
+    line(152+boatx,300,182+boatx,284);
+    line(152+boatx,249,243+boatx,213);
+    //
+    if(boatx<0.5){boatx+=0.5;}
+    if(boatx>0){storytime+=0.01;}
+    if(storytime<0.02&&storytime>0){
+        println("Sailor:Land Hoy,Land Hoy!!");
+        println("Sailor:With tresurement shall be there.");
+        println("Sailor:Joy, what jewels shall i perceive");
+        println("Press x to close chat");
+    }
+    if(storytime>5){scene='map';}
+    //
+    fill(255, 255, 255);
+    textSize(28);
+    text("S.S Altrix",20+boatx,266);
+    //
+    noStroke();
+    if(floatime>800){youfloatmyboat=random(1,2);
+    floatime=0;
+    }
+    floatime+=5;
+    if(youfloatmyboat===1){boaty-=5;}
+    if(youfloatmyboat===2){boaty+=5;}
+};
+//book of legend
+var bookoflegend=function(){
+fill(255, 174, 0);
+rect(100,81,200,272);
+textSize(20);
+fill(255, 255, 255);
+text("The Fire Gem",140,119);
+text("The Water Gem",133,157);
+text("The Dark Gem",140,196);
+text("The Light Gem",140,238);
+text("The Combination Gem",101,278);
+fill(28, 28, 28);
+if(mouseInBox(180,294,50,50)){mouseClicked=function(){scene='map';};}
+text("Back",180,320);
+if(mouseInBox(134,88,142,40)){mouseClicked=function(){scene='firelegend';};}
+if(mouseInBox(134,135,142,40)){mouseClicked=function(){scene='waterlegend';};}
+if(mouseInBox(134,176,142,30)){mouseClicked=function(){scene='darklegend';};}
+if(mouseInBox(134,217,142,30)){mouseClicked=function(){scene='lightlegend';};}
+if(mouseInBox(134,261,142,30)){mouseClicked=function(){scene='comblegend';};}
+};
+var fl=function(){
+fill(255, 174, 0);
+rect(100,81,200,272);};
+fill(255, 0, 0);
+rect(115,81,50,50);
+var wl=function(){
+fill(255, 174, 0);
+rect(100,81,200,272);};
+var dl=function(){
+fill(255, 174, 0);
+rect(100,81,200,272);};
+var ll=function(){
+fill(255, 174, 0);
+rect(100,81,200,272);};
+var cl=function(){
+fill(255, 174, 0);
+rect(100,81,200,272);};
+//hotbar
+var hoty=-30;
+var mbo=0;
+//gems
+var fire='false';
+var water='false';
+var dark='false';
+var light='false';
+var comb='false';
+//gems
+var hotbar=function(){fill(0, 0, 0,80);
+rect(1,1+hoty,400,30);
+if(mouseInBox(1,1,400,30)){hoty+=1;}
+if(hoty>0){hoty=0;}
+if(!mouseInBox(1,1,400,30)){hoty-=3;}
+if(hoty<-30){hoty=-30;}
+fill(181, 186, 31);
+//menu button design
+rect(385,6+hoty,5,20);
+rect(379+mbo,6+hoty,5,20);
+fill(255, 174, 0);
+ellipse(389,5+hoty,7,5);
+ellipse(380+mbo,5+hoty,7,5);
+ellipse(389,27+hoty,7,5);
+ellipse(380+mbo,27+hoty,7,5);
+//menu button hover&click
+if(mouseInBox(365,1+hoty,40,35)){mouseClicked=function(){scene='menu';};
+mbo-=0.5;
+fill(93, 112, 0);
+rect(379+mbo+2,7+hoty,5-mbo+1,20);
+}
+if(!mouseInBox(365,1+hoty,40,35)){mouseClicked=function(){scene='menu';};
+mbo+=0.5;
+}
+if(mbo<-7){mbo=-7;}
+if(mbo>0){mbo=0;}
+//book button
+fill(255, 0, 0);
+rect(328,6+hoty,5,20);
+fill(255, 145, 0);
+rect(333,6+hoty,19,20);
+//book click
+if(mouseInBox(316,6+hoty,41,20)){mouseClicked=function(){
+scene='book';};}
+//gems
+fill(145, 145, 145,200);
+rect(50,6+hoty,25,25);
+rect(100,6+hoty,25,25);
+rect(150,6+hoty,25,25);
+rect(200,6+hoty,25,25);
+rect(250,6+hoty,25,25);
+if(fire==='true'){
+    fill(255, 0, 0);
+    rect(50,6+hoty,25,25);
+}
+if(water==='true'){
+    fill(0, 34, 255);
+    rect(100,6+hoty,25,25);
+}
+if(dark==='true'){
+    fill(0, 0, 0);
+    rect(150,6+hoty,25,25);
+}
+if(light==='true'){
+    fill(255, 255, 255);
+    rect(200,6+hoty,25,25);
+}
+if(comb==='true'){
+    fill(random(1,255), random(1,255), random(1,255));
+    rect(250,6+hoty,25,25);
+}
+};
+var islandmap=function(){
+background(0, 255, 225);
+hotbar();
+};
+//hotbar
+draw= function() {
+if(scene==='menu'){
+ menu();   
+}
+if(scene==='How2'){
+ how2();   
+
+}
+if(scene==='credits'){
+ credits();   
+
+}
+if(scene==='Play'){
+    play();
+}
+if(scene==='story'){
+    story();}
+if(scene==='map'){
+    islandmap();}
+if(scene==='book'){
+    bookoflegend();
+}
+if(scene==='comblegend'){
+    cl();
+}
+if(scene==='firelegend'){
+    fl();
+}
+if(scene==='waterlegend'){
+    wl();
+}
+if(scene==='lightlegend'){
+    ll();
+}
+if(scene==='darklegend'){
+    dl();
+}
+};
